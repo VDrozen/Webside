@@ -1,5 +1,72 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 120em;
+  width: 100%;
+}
+
+.burger__button {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 10px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.burger__button__spin {
+  position: absolute;
+  height: 0.3em;
+  width: 2em;
+  background-color: black;
+}
+.burger__button__spin::before {
+  content: "";
+  position: absolute;
+  bottom: -0.7em;
+  right: 0.3em;
+  height: 0.3em;
+  width: 2em;
+  background-color: black;
+}
+.burger__button__spin::after {
+  content: "";
+  position: absolute;
+  top: -0.7em;
+  right: 0.3em;
+  height: 0.3em;
+  width: 2em;
+  background-color: black;
+}
+
+.nav__project {
+  position: relative;
+}
+
+.navigation_no_phone {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 10px;
+  background-color: gold;
+}
+.navigation_no_phone__nav__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 500;
+}
+.navigation_no_phone__nav__link .fa-solid {
+  font-size: 1.5em;
 }/*# sourceMappingURL=style.css.map */
