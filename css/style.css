@@ -24,13 +24,17 @@ html {
   padding: 20px 10px;
   text-decoration: none;
   color: black;
-  cursor: pointer;
 }
 .burger__button__spin {
+  cursor: pointer;
   position: absolute;
-  height: 0.3em;
+  height: 0.2em;
   width: 2em;
   background-color: black;
+  transition: backgroundColor 2s;
+}
+.burger__button__spin:hover {
+  background-color: gold;
 }
 .burger__button__spin::before {
   content: "";
@@ -69,4 +73,25 @@ html {
 }
 .navigation_no_phone__nav__link .fa-solid {
   font-size: 1.5em;
+}
+
+@keyframes buttonAnimation {
+  from {
+    content: "";
+    position: absolute;
+    top: -0.7em;
+    right: 0.3em;
+    height: 0.3em;
+    width: 2em;
+    background-color: black;
+  }
+  to {
+    content: "";
+    position: absolute;
+    top: -1em;
+    right: 2em;
+    height: 0.3em;
+    width: 2em;
+    background-color: black;
+  }
 }/*# sourceMappingURL=style.css.map */

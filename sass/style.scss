@@ -1,3 +1,5 @@
+// @import '.animation.scss';
+
 *,
 ::before,
 ::after {
@@ -25,36 +27,43 @@ html {
 	padding: 20px 10px;
 	text-decoration: none;
 	color: black;
-    cursor: pointer;
+	
 
 	&__spin {
+		cursor: pointer;
 		position: absolute;
-		height: 0.3em;
+		height: 0.2em;
 		width: 2em;
 		background-color: black;
+		transition: backgroundColor 2s;
 	}
+
+    &__spin:hover{
+        background-color: gold;
+    }
 
 	&__spin::before {
-        content: '';
+		content: '';
 		position: absolute;
-        bottom: -0.7em;
-        right: 0.3em;
+		bottom: -0.7em;
+		right: 0.3em;
 		height: 0.3em;
 		width: 2em;
 		background-color: black;
-        
 	}
 
-    &__spin::after{
-        content: '';
-        position: absolute;
-        top: -0.7em;
-        right: 0.3em;
-        height: 0.3em;
-        width: 2em;
-        background-color: black;
-    }
+	&__spin::after {
+		content: '';
+		position: absolute;
+		top: -0.7em;
+		right: 0.3em;
+		height: 0.3em;
+		width: 2em;
+		background-color: black;
+	}
 }
+
+
 
 .nav__project {
 	position: relative;
@@ -74,5 +83,26 @@ html {
 		.fa-solid {
 			font-size: 1.5em;
 		}
+	}
+}
+
+@keyframes buttonAnimation {
+	from {
+		content: '';
+		position: absolute;
+		top: -0.7em;
+		right: 0.3em;
+		height: 0.3em;
+		width: 2em;
+		background-color: black;
+	}
+	to {
+		content: '';
+		position: absolute;
+		top: -1em;
+		right: 2em;
+		height: 0.3em;
+		width: 2em;
+		background-color: black;
 	}
 }
