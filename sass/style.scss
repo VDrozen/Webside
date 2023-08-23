@@ -35,10 +35,14 @@ html {
 		height: 0.2em;
 		width: 2em;
 		background-color: black;
-		transition: backgroundColor 2s;
+		// transition: backgroundColor 2s;
 	}
 
     &__spin:hover{
+        cursor: pointer;
+		position: absolute;
+		height: 0.2em;
+		width: 2em;
         background-color: gold;
     }
 
@@ -61,6 +65,13 @@ html {
 		width: 2em;
 		background-color: black;
 	}
+
+    &__spin:hover::before{
+        animation: buttonAnimation linear 1s;
+    }
+    &__spin:hover::after{
+        animation: buttonAnimation linear 1s;
+    }
 }
 
 
@@ -88,21 +99,12 @@ html {
 
 @keyframes buttonAnimation {
 	from {
-		content: '';
-		position: absolute;
-		top: -0.7em;
-		right: 0.3em;
-		height: 0.3em;
-		width: 2em;
-		background-color: black;
+		// transform: translateX(0em);
+        width: 2em;;
+        
 	}
 	to {
-		content: '';
-		position: absolute;
-		top: -1em;
-		right: 2em;
-		height: 0.3em;
-		width: 2em;
-		background-color: black;
+		// transform: translateX(1em);
+        width: 1.3em;
 	}
 }

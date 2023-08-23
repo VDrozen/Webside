@@ -31,9 +31,12 @@ html {
   height: 0.2em;
   width: 2em;
   background-color: black;
-  transition: backgroundColor 2s;
 }
 .burger__button__spin:hover {
+  cursor: pointer;
+  position: absolute;
+  height: 0.2em;
+  width: 2em;
   background-color: gold;
 }
 .burger__button__spin::before {
@@ -53,6 +56,12 @@ html {
   height: 0.3em;
   width: 2em;
   background-color: black;
+}
+.burger__button__spin:hover::before {
+  animation: buttonAnimation linear 1s;
+}
+.burger__button__spin:hover::after {
+  animation: buttonAnimation linear 1s;
 }
 
 .nav__project {
@@ -77,21 +86,9 @@ html {
 
 @keyframes buttonAnimation {
   from {
-    content: "";
-    position: absolute;
-    top: -0.7em;
-    right: 0.3em;
-    height: 0.3em;
     width: 2em;
-    background-color: black;
   }
   to {
-    content: "";
-    position: absolute;
-    top: -1em;
-    right: 2em;
-    height: 0.3em;
-    width: 2em;
-    background-color: black;
+    width: 1.3em;
   }
 }/*# sourceMappingURL=style.css.map */
