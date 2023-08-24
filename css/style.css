@@ -24,6 +24,7 @@ html {
   padding: 20px 10px;
   text-decoration: none;
   color: black;
+  position: sticky;
 }
 .burger__button__spin {
   cursor: pointer;
@@ -58,10 +59,10 @@ html {
   background-color: black;
 }
 .burger__button__spin:hover::before {
-  animation: buttonAnimation linear 1s;
+  animation: buttonAnimation linear 1s forwards;
 }
 .burger__button__spin:hover::after {
-  animation: buttonAnimation linear 1s;
+  animation: buttonAnimation linear 1s forwards;
 }
 
 .nav__project {
@@ -75,6 +76,7 @@ html {
   background-color: gold;
 }
 .navigation_no_phone__nav__link {
+  position: relative;
   text-decoration: none;
   text-transform: uppercase;
   color: black;
@@ -83,6 +85,51 @@ html {
 .navigation_no_phone__nav__link .fa-solid {
   font-size: 1.5em;
 }
+.navigation_no_phone__nav__link::after {
+  content: "";
+  position: absolute;
+  height: 0.3em;
+  width: 0em;
+  background-color: black;
+  z-index: 40;
+  bottom: -0.5em;
+  left: 0;
+}
+.navigation_no_phone__nav__link:hover::after {
+  animation: NavDecoration ease-out 2s forwards;
+}
+
+.navigation_on_phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  height: 100vh;
+  width: 100% vh;
+  background-color: whitesmoke;
+}
+.navigation_on_phone__nav__link {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+  margin: 1em;
+}
+.navigation_on_phone__nav__link::after {
+  content: "";
+  position: absolute;
+  height: 0.2em;
+  width: 0em;
+  background-color: black;
+  z-index: 40;
+  bottom: -0.5em;
+  left: 0;
+}
+.navigation_on_phone__nav__link:hover::after {
+  animation: NavDecoration ease-out 2s forwards;
+}
 
 @keyframes buttonAnimation {
   from {
@@ -90,5 +137,13 @@ html {
   }
   to {
     width: 1.3em;
+  }
+}
+@keyframes NavDecoration {
+  from {
+    width: 0em;
+  }
+  to {
+    width: 4em;
   }
 }/*# sourceMappingURL=style.css.map */
