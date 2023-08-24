@@ -27,7 +27,7 @@ html {
 	padding: 20px 10px;
 	text-decoration: none;
 	color: black;
-	
+	position: sticky;
 
 	&__spin {
 		cursor: pointer;
@@ -38,13 +38,13 @@ html {
 		// transition: backgroundColor 2s;
 	}
 
-    &__spin:hover{
-        cursor: pointer;
+	&__spin:hover {
+		cursor: pointer;
 		position: absolute;
 		height: 0.2em;
 		width: 2em;
-        background-color: gold;
-    }
+		background-color: gold;
+	}
 
 	&__spin::before {
 		content: '';
@@ -66,15 +66,13 @@ html {
 		background-color: black;
 	}
 
-    &__spin:hover::before{
-        animation: buttonAnimation linear 1s;
-    }
-    &__spin:hover::after{
-        animation: buttonAnimation linear 1s;
-    }
+	&__spin:hover::before {
+		animation: buttonAnimation linear 1s forwards;
+	}
+	&__spin:hover::after {
+		animation: buttonAnimation linear 1s forwards;
+	}
 }
-
-
 
 .nav__project {
 	position: relative;
@@ -87,6 +85,7 @@ html {
 	padding: 20px 10px;
 	background-color: gold;
 	&__nav__link {
+		position: relative;
 		text-decoration: none;
 		text-transform: uppercase;
 		color: black;
@@ -95,16 +94,77 @@ html {
 			font-size: 1.5em;
 		}
 	}
+
+	&__nav__link::after {
+		content: '';
+		position: absolute;
+		height: 0.3em;
+		width: 0em;
+		background-color: black;
+		z-index: 40;
+		bottom: -0.5em;
+		left: 0;
+	}
+
+	&__nav__link:hover::after {
+		animation: NavDecoration ease-out 2s forwards;
+	}
+}
+
+// Created a navigation on the phone
+
+.navigation_on_phone {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	right: 0;
+	height: 100vh;
+	width: 100%vh;
+	background-color: whitesmoke;
+
+	&__nav__link {
+		position: relative;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: black;
+		font-size: large;
+		// padding: 1em 1em;
+		margin: 1em;
+	}
+
+	&__nav__link::after {
+		content: '';
+		position: absolute;
+		height: 0.2em;
+		width: 0em;
+		background-color: black;
+		z-index: 40;
+		bottom: -0.5em;
+		left: 0;
+	}
+
+	&__nav__link:hover::after {
+		animation: NavDecoration ease-out 2s forwards;
+	}
 }
 
 @keyframes buttonAnimation {
 	from {
 		// transform: translateX(0em);
-        width: 2em;;
-        
+		width: 2em;
 	}
 	to {
 		// transform: translateX(1em);
-        width: 1.3em;
+		width: 1.3em;
+	}
+}
+
+@keyframes NavDecoration {
+	from {
+		width: 0em;
+	}
+	to {
+		width: 4em;
 	}
 }
